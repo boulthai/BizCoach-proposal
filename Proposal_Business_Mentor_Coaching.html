@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposal — Business Mentor & Coaching 6 Tháng | KindSight Academy</title>
+<style>
+:root {
+  --cream:#FDFAF4; --cream-mid:#F7EFD8; --cream-dark:#EDD9A3;
+  --gold:#C9A227; --gold-dark:#8B6914; --gold-deep:#5C3D0E;
+  --gold-light:#FDF5CC; --gold-glow:rgba(201,162,39,.15);
+  --brown:#2C2010; --text-mid:#5C4A2A; --text-light:#8A7050;
+  --border:#DFC680; --border-light:#EED898;
+  --white:#FFFFFF; --green:#2E7D32; --green-bg:#E8F5E9;
+  --shadow:rgba(139,105,20,.12); --shadow-md:rgba(139,105,20,.2);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:var(--cream);color:var(--brown);font-size:14px;line-height:1.7}
+
+/* ── STICKY NAV ── */
+.nav{position:sticky;top:0;z-index:100;background:rgba(28,14,5,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,162,39,.3);padding:0 20px;display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{color:rgba(253,245,204,.7);text-decoration:none;padding:12px 10px;font-size:12px;white-space:nowrap;border-bottom:2px solid transparent;transition:.2s}
+.nav a:hover,.nav a.active{color:var(--gold);border-bottom-color:var(--gold)}
+.nav-logo{color:var(--gold);font-weight:700;font-size:13px;margin-right:12px;white-space:nowrap}
+
+/* ── HEADER ── */
+.hero{background:linear-gradient(150deg,#0E0702 0%,#3B2008 45%,#7A5A10 100%);color:#fff;padding:56px 32px 48px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 75% 55% at 50% 50%,rgba(201,162,39,.22) 0%,transparent 68%)}
+.hero>*{position:relative}
+.hero-badge{display:inline-block;border:1px solid rgba(201,162,39,.5);border-radius:20px;padding:5px 18px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.hero h1{font-size:clamp(22px,4vw,36px);font-weight:800;letter-spacing:.5px;line-height:1.25;margin-bottom:8px}
+.hero h1 span{color:var(--gold)}
+.hero-sub{font-size:16px;color:rgba(253,245,204,.8);margin-bottom:36px}
+.hero-meta{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.hero-chip{background:rgba(253,245,204,.1);border:1px solid rgba(201,162,39,.3);border-radius:8px;padding:10px 20px;text-align:left}
+.hero-chip label{display:block;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+.hero-chip span{font-size:13px;color:rgba(255,255,255,.85)}
+
+/* ── SECTIONS ── */
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+.section{padding:52px 0}
+.section+.section{border-top:1px solid var(--border-light)}
+
+.sec-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-dark);font-weight:700;margin-bottom:10px}
+.sec-num{width:24px;height:24px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800}
+h2.sec-title{font-size:clamp(18px,3vw,24px);font-weight:800;color:var(--brown);margin-bottom:6px}
+.sec-desc{color:var(--text-mid);font-size:13.5px;margin-bottom:28px;line-height:1.65}
+
+/* ── CARDS ── */
+.card{background:var(--white);border:1px solid var(--border-light);border-radius:14px;padding:24px;box-shadow:0 2px 12px var(--shadow)}
+.card+.card{margin-top:16px}
+.card-title{font-size:13px;font-weight:700;color:var(--gold-dark);text-transform:uppercase;letter-spacing:.8px;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border-light)}
+
+/* ── FORMS ── */
+.field-group{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:8px}
+.field{display:flex;flex-direction:column;gap:5px}
+.field label{font-size:11.5px;font-weight:600;color:var(--text-mid);letter-spacing:.3px}
+.field input,.field textarea,.field select{background:var(--cream-mid);border:1.5px solid var(--border);border-radius:8px;padding:9px 12px;font-size:13.5px;color:var(--brown);font-family:inherit;transition:.2s;width:100%}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--gold);background:var(--white);box-shadow:0 0 0 3px var(--gold-glow)}
+.field textarea{resize:vertical;min-height:70px}
+.field input::placeholder,.field textarea::placeholder{color:var(--text-light);font-style:italic}
+
+/* inline blank inputs */
+.inline-input{background:var(--cream-mid);border:none;border-bottom:2px solid var(--border);border-radius:0;padding:2px 8px;font-size:14px;color:var(--brown);font-family:inherit;min-width:120px;text-align:center;transition:.2s}
+.inline-input:focus{outline:none;border-bottom-color:var(--gold);background:var(--gold-light)}
+.inline-input.wide{min-width:220px}
+
+/* ── TABLES ── */
+.tbl-wrap{overflow-x:auto;margin-top:12px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:var(--gold-deep);color:#fff;padding:10px 14px;font-weight:600;text-align:left;font-size:12px;letter-spacing:.3px}
+td{padding:10px 14px;border-bottom:1px solid var(--border-light);vertical-align:middle}
+tr:nth-child(even) td{background:rgba(237,217,163,.18)}
+tr:last-child td{border-bottom:none}
+td input.cell-input{background:transparent;border:none;border-bottom:1.5px dashed var(--border);padding:3px 6px;width:100%;font-size:13px;color:var(--brown);font-family:inherit;min-width:80px}
+td input.cell-input:focus{outline:none;border-bottom-color:var(--gold);background:var(--gold-light);border-radius:4px}
+td.kpi-auto{color:var(--green);font-weight:600;font-size:13px}
+td.kpi-now{color:var(--text-mid)}
+
+/* ── BULLETS ── */
+.bullet-list{list-style:none;padding:0;margin-top:10px;display:flex;flex-direction:column;gap:8px}
+.bullet-list li{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--text-mid);line-height:1.6}
+.bullet-list li::before{content:'◆';color:var(--gold);font-size:10px;margin-top:5px;flex-shrink:0}
+
+/* ── GOAL BOXES ── */
+.goal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:20px 0}
+.goal-box{border-radius:14px;padding:22px 18px;text-align:center;border:1px solid var(--border)}
+.goal-box.g1{background:linear-gradient(135deg,#FDF5CC,#F7EFD8)}
+.goal-box.g2{background:linear-gradient(135deg,#E8F5E9,#D5F5E3)}
+.goal-box.g3{background:linear-gradient(135deg,#E3F2FD,#BBDEFB)}
+.goal-icon{font-size:28px;margin-bottom:8px}
+.goal-box h4{font-size:13px;font-weight:800;color:var(--brown);letter-spacing:.5px;margin-bottom:4px}
+.goal-box p{font-size:12px;color:var(--text-mid)}
+
+/* ── GROWTH SLIDER ── */
+.slider-wrap{background:var(--gold-light);border:1.5px solid var(--border);border-radius:14px;padding:24px;margin-top:16px}
+.slider-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.slider-label{font-size:13px;font-weight:700;color:var(--gold-dark)}
+.slider-val{font-size:24px;font-weight:800;color:var(--gold-deep);min-width:70px;text-align:right}
+input[type=range]{width:100%;accent-color:var(--gold);height:6px;cursor:pointer}
+.slider-result{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;margin-top:20px}
+.rev-box{background:var(--white);border-radius:10px;padding:14px 16px;border:1px solid var(--border)}
+.rev-box label{font-size:10.5px;font-weight:600;color:var(--text-light);text-transform:uppercase;letter-spacing:.8px;display:block;margin-bottom:4px}
+.rev-box .rev-num{font-size:18px;font-weight:800;color:var(--brown)}
+.rev-box.target .rev-num{color:var(--green)}
+.rev-arrow{text-align:center;font-size:22px;color:var(--gold)}
+.delta-tag{background:var(--green-bg);color:var(--green);border-radius:6px;padding:6px 12px;font-size:12.5px;font-weight:700;text-align:center;margin-top:10px}
+
+/* ── ROI ── */
+.roi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:16px}
+.roi-item{background:var(--white);border:1px solid var(--border-light);border-radius:10px;padding:16px;text-align:center}
+.roi-item label{font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--text-light);display:block;margin-bottom:6px}
+.roi-item .roi-val{font-size:20px;font-weight:800;color:var(--gold-deep)}
+.roi-item.hl{background:var(--gold-light);border-color:var(--gold)}
+.roi-item.hl .roi-val{color:var(--green)}
+
+/* ── PHASE CARDS ── */
+.phase-wrap{display:flex;flex-direction:column;position:relative}
+.phase-wrap::before{content:'';position:absolute;left:27px;top:52px;bottom:52px;width:2px;background:linear-gradient(to bottom,var(--gold),var(--gold-dark));opacity:.3}
+.phase{display:flex;gap:20px;padding:24px 0;position:relative}
+.phase-dot{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;flex-shrink:0;border:3px solid var(--white);box-shadow:0 0 0 2px var(--gold)}
+.p1 .phase-dot{background:linear-gradient(135deg,#8B6914,#C9A227)}
+.p2 .phase-dot{background:linear-gradient(135deg,#1A6B3A,#27AE60)}
+.p3 .phase-dot{background:linear-gradient(135deg,#1A3C6B,#2471A3)}
+.phase-body{flex:1}
+.phase-badge{font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:20px;display:inline-block;margin-bottom:6px}
+.p1 .phase-badge{background:#FFF3CD;color:#7D6608}
+.p2 .phase-badge{background:#D5F5E3;color:#1E5631}
+.p3 .phase-badge{background:#D6EAF8;color:#1A3C6B}
+.phase-body h3{font-size:15px;font-weight:800;color:var(--brown);margin-bottom:3px}
+.phase-goal{font-size:12.5px;color:var(--text-mid);font-style:italic;margin-bottom:12px}
+.phase-items{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
+.phase-item{font-size:13px;color:var(--text-mid);padding-left:16px;position:relative;line-height:1.55}
+.phase-item::before{content:'→';position:absolute;left:0;color:var(--gold);font-size:11px;top:2px}
+.phase-deliverable{background:var(--cream-mid);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;padding:9px 14px;font-size:12.5px;color:var(--gold-dark);font-weight:600}
+.phase-deliverable span{color:var(--text-mid);font-weight:400}
+
+/* ── ROLE CARDS ── */
+.role-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:12px;margin-top:12px}
+.role-card{background:var(--white);border:1px solid var(--border-light);border-radius:12px;padding:16px}
+.role-icon{font-size:22px;margin-bottom:6px}
+.role-card h4{font-size:13px;font-weight:800;color:var(--brown);margin-bottom:5px}
+.role-card p{font-size:12.5px;color:var(--text-mid);line-height:1.55}
+
+/* ── DCI ── */
+.dci-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.dci-list li{background:var(--gold-light);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:10px 14px;font-size:13.5px;color:var(--text-mid)}
+
+/* ── PACKAGES ── */
+.pkg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:20px}
+.pkg{background:var(--white);border:2px solid var(--border);border-radius:16px;padding:24px 20px;cursor:pointer;position:relative;transition:.25s;text-align:center}
+.pkg:hover{border-color:var(--gold);box-shadow:0 4px 20px var(--shadow-md)}
+.pkg.selected{border-color:var(--gold);background:var(--gold-light);box-shadow:0 6px 28px var(--shadow-md)}
+.pkg-ribbon{position:absolute;top:-1px;right:18px;background:var(--gold);color:#fff;font-size:10px;font-weight:700;letter-spacing:.8px;padding:4px 12px;border-radius:0 0 8px 8px}
+.pkg-name{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-light);margin-bottom:10px}
+.pkg-price{font-size:32px;font-weight:800;color:var(--brown)}
+.pkg-price sub{font-size:13px;font-weight:500;color:var(--text-mid)}
+.pkg-total{font-size:13px;color:var(--text-mid);margin:4px 0 6px}
+.pkg-save{display:inline-block;background:var(--green-bg);color:var(--green);font-size:11.5px;font-weight:700;border-radius:6px;padding:3px 10px;margin-top:2px}
+.pkg-desc{font-size:12px;color:var(--text-light);margin-top:10px;line-height:1.55}
+
+/* ── INCLUDED ── */
+.inc-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:7px;margin-top:10px}
+.inc-list li{display:flex;gap:10px;font-size:13.5px;color:var(--text-mid);line-height:1.5}
+.inc-list li .ic{color:var(--green);font-size:14px;flex-shrink:0;margin-top:2px}
+.excl-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.excl-list li{display:flex;gap:10px;font-size:13px;color:var(--text-mid);opacity:.75}
+.excl-list li .ic{color:#999;flex-shrink:0}
+
+/* ── TERMS ── */
+.term-block{margin-bottom:20px}
+.term-block h4{font-size:12.5px;font-weight:700;color:var(--gold-dark);margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px}
+.commit-list{display:flex;flex-direction:column;gap:8px;list-style:none;padding:0}
+.commit-list li{display:flex;gap:10px;font-size:13.5px;color:var(--text-mid);line-height:1.6}
+.commit-list li::before{content:'✓';color:var(--green);font-weight:800;flex-shrink:0}
+
+/* ── SIGNATURE ── */
+.sig-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+.sig-box{background:var(--cream-mid);border:1px solid var(--border);border-radius:12px;padding:20px}
+.sig-box h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-light);margin-bottom:6px}
+.sig-box .sig-name{font-size:16px;font-weight:800;color:var(--brown);margin-bottom:14px}
+.sig-line{border:none;border-bottom:1.5px dashed var(--border);width:100%;height:40px;background:transparent;display:block;margin-bottom:8px}
+.sig-date{font-size:12px;color:var(--text-light)}
+
+/* ── CHECKBOX ── */
+.cb-group{display:flex;gap:16px;flex-wrap:wrap;margin-top:6px}
+.cb-group label{display:flex;align-items:center;gap:6px;font-size:13.5px;color:var(--text-mid);cursor:pointer}
+.cb-group input[type=checkbox]{accent-color:var(--gold);width:16px;height:16px;cursor:pointer}
+
+/* ── ACTION BAR ── */
+.action-bar{position:sticky;bottom:0;background:rgba(28,14,5,.96);backdrop-filter:blur(8px);border-top:1px solid rgba(201,162,39,.3);padding:12px 20px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;z-index:99}
+.btn{border:none;border-radius:8px;padding:10px 20px;font-size:13px;font-weight:600;cursor:pointer;transition:.2s;font-family:inherit;display:inline-flex;align-items:center;gap:7px}
+.btn-ghost{background:rgba(253,245,204,.1);color:rgba(253,245,204,.8);border:1px solid rgba(201,162,39,.4)}
+.btn-ghost:hover{background:rgba(253,245,204,.2);color:var(--gold)}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#fff;box-shadow:0 2px 10px rgba(201,162,39,.4)}
+.btn-gold:hover{filter:brightness(1.1)}
+
+/* ── NOTE BOX ── */
+.note-box{background:var(--gold-light);border:1.5px solid var(--border);border-radius:10px;padding:14px 18px;font-size:13px;color:var(--text-mid);margin-top:14px;line-height:1.65}
+.note-box strong{color:var(--gold-dark)}
+
+/* ── CONTENTEDITABLE ── */
+[contenteditable="true"]{outline:none;border-radius:4px;padding:1px 4px;cursor:text;transition:.18s;min-width:60px;display:inline-block}
+[contenteditable="true"]:hover{background:rgba(201,162,39,.1)}
+[contenteditable="true"]:focus{background:var(--gold-light);box-shadow:0 0 0 2px var(--gold);border-radius:4px}
+td[contenteditable="true"]{display:table-cell;min-width:80px}
+.ce-hint{font-size:10px;color:var(--text-light);letter-spacing:.5px;margin-bottom:6px;font-style:italic}
+.ce-block[contenteditable="true"]{display:block;width:100%;padding:6px 8px;border-radius:6px;line-height:1.65;min-height:1.65em}
+.ce-block[contenteditable="true"]:hover{background:rgba(201,162,39,.1)}
+.ce-block[contenteditable="true"]:focus{background:var(--gold-light);box-shadow:0 0 0 2px var(--gold)}
+.bullet-list li span[contenteditable="true"]{display:inline;cursor:text;border-radius:3px;padding:1px 3px}
+.editable-indicator{position:relative}
+.editable-indicator::after{content:'✎';position:absolute;top:-8px;right:-2px;font-size:9px;color:var(--border);opacity:0;transition:.2s}
+.editable-indicator:hover::after{opacity:1}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(40px);background:var(--gold-deep);color:var(--gold-light);padding:11px 22px;border-radius:10px;font-size:13px;font-weight:600;opacity:0;transition:.35s;z-index:999;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ── PRINT ── */
+@media print{
+  .nav,.action-bar,.toast{display:none!important}
+  .hero{background:#2C2010!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .card,.pkg,.phase,.role-card{break-inside:avoid}
+  .field input,.field textarea,.inline-input,.cell-input{border-bottom:1px solid #999!important;background:transparent!important}
+  body{font-size:12px}
+}
+@media(max-width:600px){
+  .sig-grid{grid-template-columns:1fr}
+  .slider-result{grid-template-columns:1fr;gap:8px}
+  .rev-arrow{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <span class="nav-logo">KindSight</span>
+  <a href="#sec1">I. Bối Cảnh</a>
+  <a href="#sec2">II. Mục Tiêu</a>
+  <a href="#sec3">III. Phương Pháp</a>
+  <a href="#sec4">IV. Lộ Trình</a>
+  <a href="#sec5">V. SPA</a>
+  <a href="#sec6">VI. Đầu Tư</a>
+  <a href="#sec7">VII. Cam Kết</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-badge">KindSight Academy</div>
+  <h1>CHƯƠNG TRÌNH<br><span>BUSINESS MENTOR &amp; COACHING</span><br>6 THÁNG ĐỒNG HÀNH CHIẾN LƯỢC</h1>
+  <p class="hero-sub">Kính gửi: Công ty Minh Khuê</p>
+  <div class="hero-meta">
+    <div class="hero-chip"><label>Lĩnh vực</label><span>Giáo dục (GV Tiếng Anh) &amp; Du lịch học sinh</span></div>
+    <div class="hero-chip"><label>Thị trường</label><span>Trường công lập phía Bắc Việt Nam</span></div>
+    <div class="hero-chip"><label>Ngày lập</label><span>Tháng 5, 2026</span></div>
+    <div class="hero-chip"><label>Đơn vị tư vấn</label><span>KindSight Academy</span></div>
+  </div>
+</header>
+
+<!-- ════ SECTION I — BỐI CẢNH ════ -->
+<section class="section" id="sec1">
+<div class="wrap">
+  <div class="sec-label"><span class="sec-num">I</span>Bối Cảnh &amp; Thực Trạng</div>
+  <h2 class="sec-title">Bối Cảnh &amp; Thực Trạng Doanh Nghiệp</h2>
+  <p class="sec-desc">Phần này là cơ sở để xây dựng lộ trình coaching phù hợp nhất. Các thông tin đã được ghi nhận từ buổi trao đổi ban đầu. Anh/Chị bổ sung vào các ô trống trước buổi coaching đầu tiên.</p>
+
+  <!-- 1.1 -->
+  <div class="card">
+    <div class="card-title">1.1 Thông Tin Doanh Nghiệp</div>
+    <p class="ce-hint">✎ Nhấn vào bất kỳ ô nào để chỉnh sửa trực tiếp</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th style="width:42%">Thông tin</th><th>Nội dung</th></tr></thead>
+        <tbody>
+          <tr>
+            <td contenteditable="true" data-ce-id="lbl-bizname">Tên doanh nghiệp</td>
+            <td><input class="cell-input" id="biz-name" placeholder="[______________________]"></td>
+          </tr>
+          <tr>
+            <td contenteditable="true" data-ce-id="lbl-field">Lĩnh vực hoạt động</td>
+            <td contenteditable="true" data-ce-id="val-field">Giáo dục (GV Tiếng Anh) &amp; Du lịch học sinh</td>
+          </tr>
+          <tr>
+            <td contenteditable="true" data-ce-id="lbl-market">Thị trường hiện tại</td>
+            <td contenteditable="true" data-ce-id="val-market">Trường công lập phía Bắc Việt Nam</td>
+          </tr>
+          <tr>
+            <td contenteditable="true" data-ce-id="lbl-age">Thời gian hoạt động</td>
+            <td contenteditable="true" data-ce-id="val-age">2 – 5 năm</td>
+          </tr>
+          <tr>
+            <td contenteditable="true" data-ce-id="lbl-staff">Số nhân sự hiện tại</td>
+            <td contenteditable="true" data-ce-id="val-staff">3 người (Founder, Kế toán, Điều phối tour)</td>
+          </tr>
+          <tr>
+            <td contenteditable="true" data-ce-id="lbl-rev">Doanh thu / tháng (VNĐ)</td>
+            <td><input class="cell-input" id="current-rev" type="number" placeholder="[_________]" oninput="calcAll()" style="max-width:160px"> VNĐ / tháng</td>
+          </tr>
+          <tr>
+            <td contenteditable="true" data-ce-id="lbl-prov">Số tỉnh đang phục vụ</td>
+            <td><input class="cell-input" id="current-provinces" type="number" placeholder="[__]" oninput="calcAll()" style="max-width:70px"> tỉnh</td>
+          </tr>
+          <tr>
+            <td contenteditable="true" data-ce-id="lbl-school">Số trường có hợp đồng</td>
+            <td><input class="cell-input" id="current-schools" type="number" placeholder="[__]" oninput="calcAll()" style="max-width:70px"> trường</td>
+          </tr>
+          <tr>
+            <td contenteditable="true" data-ce-id="lbl-teacher">Số GV đang cung cấp</td>
+            <td><input class="cell-input" id="current-teachers" type="number" placeholder="[__________]" style="max-width:120px"> giáo viên</td>
+          </tr>
+          <tr>
+            <td contenteditable="true" data-ce-id="lbl-tour">Số tour / năm</td>
+            <td><input class="cell-input" id="current-tours" type="number" placeholder="[__]" style="max-width:70px"> tour / năm</td>
+          </tr>
+          <tr>
+            <td contenteditable="true" data-ce-id="lbl-founder-pct">% thời gian Founder trong vận hành</td>
+            <td><input class="cell-input" id="current-founder-pct" type="number" min="0" max="100" placeholder="[__]" oninput="calcAll()" style="max-width:70px"> %</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 1.2 -->
+  <div class="card">
+    <div class="card-title">1.2 Thách Thức Cốt Lõi Đang Đối Mặt</div>
+    <p class="ce-hint">✎ Nhấn vào văn bản hoặc từng dòng để chỉnh sửa — nhấn Enter để thêm dòng mới</p>
+    <p class="ce-block" contenteditable="true" data-ce-id="challenge-intro" style="font-size:13.5px;color:var(--text-mid);margin-bottom:14px">Founder đang đảm nhiệm quá nhiều vai trò cùng lúc: bán hàng, vận hành, kết nối đối tác, giải quyết sự cố — không còn thời gian và năng lượng cho tư duy chiến lược. Mô hình tăng trưởng theo năng lực cá nhân Founder sẽ chạm trần khi không có hệ thống đại lý hoạt động độc lập.</p>
+    <ul class="bullet-list" id="challenge-list">
+      <li><span contenteditable="true" data-ce-id="ch1">Chưa có mô hình đại lý — doanh nghiệp phụ thuộc hoàn toàn vào mạng lưới cá nhân của Founder</span></li>
+      <li><span contenteditable="true" data-ce-id="ch2">Chưa có quy trình chuẩn để tuyển chọn, đào tạo và quản lý đại lý ở các tỉnh</span></li>
+      <li><span contenteditable="true" data-ce-id="ch3">Đội ngũ 3 người chưa đủ cấu trúc để hỗ trợ một hệ thống mở rộng</span></li>
+      <li><span contenteditable="true" data-ce-id="ch4">Rủi ro tập trung: nếu Founder ngừng hoạt động, doanh nghiệp sẽ đứng lại</span></li>
+      <li><span contenteditable="true" data-ce-id="ch5" style="color:var(--text-light);font-style:italic">Thêm thách thức khác (nếu có)...</span></li>
+      <li><span contenteditable="true" data-ce-id="ch6" style="color:var(--text-light);font-style:italic">Thêm thách thức khác (nếu có)...</span></li>
+    </ul>
+  </div>
+
+  <!-- 1.3 -->
+  <div class="card">
+    <div class="card-title">1.3 Cơ Hội Tiềm Năng Chưa Khai Thác</div>
+    <p class="ce-hint">✎ Tất cả các dòng đều có thể chỉnh sửa hoặc bổ sung</p>
+    <ul class="bullet-list">
+      <li><span contenteditable="true" data-ce-id="opp1">Hai mảng dịch vụ (GV Tiếng Anh + Tour du lịch) có tính bổ trợ tự nhiên — đại lý có thể cross-sell cả hai</span></li>
+      <li><span contenteditable="true" data-ce-id="opp2">Mạng lưới quan hệ sẵn có ở nhiều tỉnh có thể được chuyển hóa thành đại lý tiềm năng</span></li>
+      <li><span contenteditable="true" data-ce-id="opp3" style="color:var(--text-light);font-style:italic">Anh/Chị bổ sung cơ hội thứ 3...</span></li>
+      <li><span contenteditable="true" data-ce-id="opp4" style="color:var(--text-light);font-style:italic">Anh/Chị bổ sung cơ hội thứ 4...</span></li>
+      <li><span contenteditable="true" data-ce-id="opp5" style="color:var(--text-light);font-style:italic">Anh/Chị bổ sung cơ hội thứ 5...</span></li>
+    </ul>
+  </div>
+
+  <!-- 1.4 -->
+  <div class="card" style="background:var(--gold-light);border-color:var(--border)">
+    <div class="card-title" contenteditable="true" data-ce-id="title-14">1.4 Anh/Chị Tự Đánh Giá — Điền Trước Buổi Coaching Đầu Tiên</div>
+    <div class="field-group" style="grid-template-columns:1fr">
+      <div class="field">
+        <label contenteditable="true" data-ce-id="lbl-q1">Tình trạng hiện tại tôi muốn thoát ra</label>
+        <textarea id="q-escape" placeholder="Mô tả tình trạng bạn muốn thoát ra khỏi..."></textarea>
+      </div>
+      <div class="field">
+        <label contenteditable="true" data-ce-id="lbl-q2">Điều tôi muốn đạt được mà chưa biết cách làm</label>
+        <textarea id="q-achieve" placeholder="Mục tiêu bạn khao khát nhưng chưa có lộ trình..."></textarea>
+      </div>
+      <div class="field">
+        <label contenteditable="true" data-ce-id="lbl-q3">Rào cản lớn nhất hiện đang cản trở tôi</label>
+        <textarea id="q-barrier" placeholder="Điều gì đang cản trở bạn nhiều nhất..."></textarea>
+      </div>
+      <div class="field">
+        <label contenteditable="true" data-ce-id="lbl-q4">Nếu 6 tháng sau mọi thứ diễn ra tốt đẹp — tôi sẽ đang làm gì</label>
+        <textarea id="q-vision" placeholder="Hãy hình dung cuộc sống và công việc lý tưởng của bạn 6 tháng nữa..."></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════ SECTION II — MỤC TIÊU ════ -->
+<section class="section" id="sec2">
+<div class="wrap">
+  <div class="sec-label"><span class="sec-num">II</span>Mục Tiêu</div>
+  <h2 class="sec-title" contenteditable="true" data-ce-id="sec2-title">Mục Tiêu Chương Trình 6 Tháng</h2>
+  <p class="sec-desc ce-block" contenteditable="true" data-ce-id="sec2-desc">Chương trình được thiết kế để giải quyết đồng thời 3 mục tiêu chiến lược:</p>
+
+  <p class="ce-hint">✎ Nhấn vào icon, tiêu đề hoặc mô tả để chỉnh sửa từng mục tiêu</p>
+  <div class="goal-grid">
+    <div class="goal-box g1">
+      <div class="goal-icon" contenteditable="true" data-ce-id="goal1-icon">🏗</div>
+      <h4 contenteditable="true" data-ce-id="goal1-title">XÂY HỆ THỐNG</h4>
+      <p contenteditable="true" data-ce-id="goal1-desc">Đại lý vận hành độc lập</p>
+    </div>
+    <div class="goal-box g2">
+      <div class="goal-icon" contenteditable="true" data-ce-id="goal2-icon">📈</div>
+      <h4 contenteditable="true" data-ce-id="goal2-title">MỞ THỊ TRƯỜNG</h4>
+      <p contenteditable="true" data-ce-id="goal2-desc">Doanh thu từ vùng mới</p>
+    </div>
+    <div class="goal-box g3">
+      <div class="goal-icon" contenteditable="true" data-ce-id="goal3-icon">👥</div>
+      <h4 contenteditable="true" data-ce-id="goal3-title">GIẢI PHÓNG FOUNDER</h4>
+      <p contenteditable="true" data-ce-id="goal3-desc">Đội tự chạy, Founder làm chiến lược</p>
+    </div>
+  </div>
+
+  <!-- SLIDER -->
+  <div class="slider-wrap">
+    <div class="slider-top">
+      <span class="slider-label">🎯 Mục tiêu tăng trưởng doanh thu (cuối tháng 6)</span>
+      <span class="slider-val" id="growth-lbl">+50%</span>
+    </div>
+    <input type="range" id="growth-slider" min="10" max="300" value="50" step="5" oninput="calcAll()">
+    <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-light);margin-top:4px"><span>+10%</span><span>+300%</span></div>
+    <div class="slider-result">
+      <div class="rev-box"><label>Doanh thu hiện tại</label><div class="rev-num" id="disp-now">—</div></div>
+      <div class="rev-arrow">→</div>
+      <div class="rev-box target"><label>Mục tiêu tháng 6</label><div class="rev-num" id="disp-target">—</div></div>
+    </div>
+    <div class="delta-tag" id="disp-delta">Nhập doanh thu hiện tại ở Phần I để tính toán</div>
+  </div>
+
+  <!-- KPI TARGET TABLE -->
+  <div class="card" style="margin-top:20px">
+    <div class="card-title" contenteditable="true" data-ce-id="kpi-title">Kết Quả Kỳ Vọng Cuối Chương Trình — Anh/Chị Xác Nhận Mục Tiêu</div>
+    <p class="ce-hint">✎ Nhấn vào tên chỉ số để đổi tên — nhấn vào ô mục tiêu để điền giá trị</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr>
+          <th contenteditable="true" data-ce-id="kpi-col1">Kết quả / Chỉ số cuối chương trình</th>
+          <th contenteditable="true" data-ce-id="kpi-col2">Mục tiêu (Anh/Chị điền)</th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td contenteditable="true" data-ce-id="kpi-lbl1">Số đại lý đang hoạt động độc lập</td>
+            <td><input class="cell-input" id="k-agents" placeholder="[______] đại lý"></td>
+          </tr>
+          <tr>
+            <td contenteditable="true" data-ce-id="kpi-lbl2">Doanh thu tháng 6 (VNĐ) <span style="color:var(--green);font-size:11px">● Tự tính</span></td>
+            <td class="kpi-auto" id="k-rev-target">—</td>
+          </tr>
+          <tr>
+            <td contenteditable="true" data-ce-id="kpi-lbl3">Số tỉnh mới được phục vụ</td>
+            <td><input class="cell-input" id="k-prov-new" type="number" placeholder="[______] tỉnh mới" oninput="calcAll()" style="max-width:130px"></td>
+          </tr>
+          <tr>
+            <td contenteditable="true" data-ce-id="kpi-lbl4">Số trường mới có hợp đồng <span style="color:var(--green);font-size:11px">● Ước tính</span></td>
+            <td class="kpi-auto" id="k-school-target">—</td>
+          </tr>
+          <tr>
+            <td contenteditable="true" data-ce-id="kpi-lbl5">% thời gian Founder trong vận hành</td>
+            <td>Từ <span class="kpi-now" id="k-time-now">—</span>% xuống còn
+            <input class="cell-input" id="k-time-target" type="number" min="0" max="100" placeholder="[__]" style="max-width:60px;display:inline-block"> %</td>
+          </tr>
+          <tr>
+            <td contenteditable="true" data-ce-id="kpi-lbl6">Số nhân sự cuối chương trình</td>
+            <td><input class="cell-input" id="k-staff" placeholder="[______] người" style="max-width:120px"></td>
+          </tr>
+          <tr>
+            <td contenteditable="true" data-ce-id="kpi-lbl7">Hệ thống vận hành đại lý hoạt động độc lập</td>
+            <td><div class="cb-group">
+              <label><input type="checkbox" name="sys-status" value="no"> Chưa</label>
+              <label><input type="checkbox" name="sys-status" value="partial"> Một phần</label>
+              <label><input type="checkbox" name="sys-status" value="full"> Đầy đủ</label>
+            </div></td>
+          </tr>
+          <tr>
+            <td contenteditable="true" data-ce-id="kpi-lbl8" style="color:var(--text-light);font-style:italic">Thêm chỉ số mới (nếu cần)...</td>
+            <td><input class="cell-input" id="k-custom1" placeholder="[__________]"></td>
+          </tr>
+          <tr>
+            <td contenteditable="true" data-ce-id="kpi-lbl9" style="color:var(--text-light);font-style:italic">Thêm chỉ số mới (nếu cần)...</td>
+            <td><input class="cell-input" id="k-custom2" placeholder="[__________]"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:11.5px;color:var(--text-light);margin-top:10px">● Các chỉ số có ký hiệu <span style="color:var(--green)">●</span> sẽ được tự động tính toán dựa trên dữ liệu bạn nhập ở Phần I.</p>
+  </div>
+</div>
+</section>
+
+<!-- ════ SECTION III — PHƯƠNG PHÁP ════ -->
+<section class="section" id="sec3">
+<div class="wrap">
+  <div class="sec-label"><span class="sec-num">III</span>Phương Pháp</div>
+  <h2 class="sec-title">Phương Pháp &amp; Triết Lý Đồng Hành</h2>
+
+  <div class="card">
+    <div class="card-title">3.1 Triết Lý Nền Tảng — Năng Đoạn Kim Cương (DCI)</div>
+    <p style="font-size:13.5px;color:var(--text-mid);margin-bottom:12px">Triết lý này được áp dụng thực tế vào chương trình:</p>
+    <ul class="dci-list">
+      <li>Không bị cuốn theo kết quả ngắn hạn.</li>
+      <li>Ứng dụng 10 hạt giống tốt với 5 cánh sao, thực hành lòng biết ơn.</li>
+      <li>Hiểu mọi thứ đến từ mình, từ đó kiến tạo doanh thu / lợi nhuận.</li>
+      <li>Ý thức tạo thuận lợi dòng tiền cho 5 đối tác trong kinh doanh (5 cánh sao) và các mối quan hệ hàng ngày.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">3.2 Khung Đồng Hành 4 Vai Trò</div>
+    <div class="role-grid">
+      <div class="role-card"><div class="role-icon">🎯</div><h4>Strategic Partner</h4><p>Cùng Founder nhìn rõ bức tranh lớn, xác định đúng ưu tiên chiến lược</p></div>
+      <div class="role-card"><div class="role-icon">🪞</div><h4>Coach</h4><p>Khai vấn để Founder tự khám phá giải pháp — không áp đặt</p></div>
+      <div class="role-card"><div class="role-icon">🧭</div><h4>Mentor</h4><p>Chia sẻ framework, kinh nghiệm thực tế, công cụ có thể ứng dụng ngay</p></div>
+      <div class="role-card"><div class="role-icon">🛠</div><h4>System Designer</h4><p>Hỗ trợ thiết kế mô hình đại lý, quy trình, tài liệu vận hành cụ thể</p></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">3.3 Cam Kết Về Cách Làm Việc</div>
+    <ul class="bullet-list">
+      <li>Mỗi buổi coaching đều có mục tiêu rõ — không họp chung chung, không lý thuyết suông</li>
+      <li>Giữa các buổi: Founder có thể liên hệ qua Zalo / Email với các câu hỏi chiến lược phát sinh</li>
+      <li>Toàn bộ tài liệu, template, framework thiết kế trong chương trình đều được trao cho Founder</li>
+      <li>Tiến độ được theo dõi hàng tháng theo bộ chỉ số do hai bên cùng thống nhất từ đầu</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- ════ SECTION IV — LỘ TRÌNH ════ -->
+<section class="section" id="sec4">
+<div class="wrap">
+  <div class="sec-label"><span class="sec-num">IV</span>Lộ Trình</div>
+  <h2 class="sec-title">Lộ Trình Đồng Hành 6 Tháng</h2>
+
+  <div class="phase-wrap">
+
+    <div class="phase p1">
+      <div class="phase-dot">P1</div>
+      <div class="phase-body">
+        <span class="phase-badge">Tháng 1 &amp; 2</span>
+        <h3>CHẨN ĐOÁN &amp; NỀN TẢNG</h3>
+        <div class="phase-goal">Mục tiêu: Hiểu rõ doanh nghiệp thực sự — Hiểu biết về quy luật gieo hạt trong kinh doanh</div>
+        <div class="phase-items">
+          <div class="phase-item">Diag toàn diện: mô hình kinh doanh, dòng tiền, quy trình vận hành, con người</div>
+          <div class="phase-item">Xác định điểm mạnh có thể nhân ra và điểm yếu cần xử lý</div>
+          <div class="phase-item">Thiết lập mục tiêu 3 tháng, 6 tháng, 1 năm, 3 năm, 5 năm cho doanh nghiệp</div>
+          <div class="phase-item">Xây dựng kế hoạch hành động 6 tháng</div>
+          <div class="phase-item">Thiết kế blueprint mô hình đại lý: cấu trúc phân cấp, cơ chế hoa hồng, vùng phụ trách</div>
+          <div class="phase-item">Xây dựng bộ tiêu chí tuyển chọn đại lý phù hợp văn hóa và đặc thù thị trường giáo dục</div>
+          <div class="phase-item">Nhận thức hiện trạng cách thức tương tác với 5 cánh sao</div>
+          <div class="phase-item">Hiểu và biết cách chăm sóc 5 đối tác bằng 4 bước</div>
+          <div class="phase-item">Hiểu và biết cách ứng dụng The Pen, 4 Bước, 4 Luật, Worklujk, Bookduk</div>
+        </div>
+        <div class="phase-deliverable">📄 Deliverable: <span>Business Strategic Plan + Blueprint mô hình đại lý v1.0</span></div>
+      </div>
+    </div>
+
+    <div class="phase p2">
+      <div class="phase-dot">P2</div>
+      <div class="phase-body">
+        <span class="phase-badge">Tháng 3 &amp; 4</span>
+        <h3>XÂY DỰNG &amp; TRIỂN KHAI</h3>
+        <div class="phase-goal">Mục tiêu: Chuẩn hóa quy trình nội bộ — Ứng dụng 10 thiện nghiệp cho 5 cánh sao</div>
+        <div class="phase-items">
+          <div class="phase-item">Phát triển Agent Starter Kit: hợp đồng mẫu, bảng giá, brochure, script tiếp cận trường</div>
+          <div class="phase-item">Thiết kế quy trình onboarding đại lý: từ tiếp cận → ký kết → đào tạo → bắt đầu hoạt động</div>
+          <div class="phase-item">Chuẩn hóa vận hành nội bộ</div>
+          <div class="phase-item">Xây dựng hành trình trải nghiệm gắn với 5 cánh sao</div>
+          <div class="phase-item">Nhận ra tầm quan trọng của việc nuôi dưỡng lòng biết ơn</div>
+          <div class="phase-item">Đưa vào thực hành lòng biết ơn 5 đối tác kinh doanh</div>
+          <div class="phase-item">Hiểu cách ứng dụng 10 hạt giống tốt cho 5 cánh sao</div>
+        </div>
+        <div class="phase-deliverable">📄 Deliverable: <span>Agent Starter Kit hoàn chỉnh + SOP vận hành nội bộ v1.0 + Ứng dụng 10 hạt giống vào doanh nghiệp</span></div>
+      </div>
+    </div>
+
+    <div class="phase p3">
+      <div class="phase-dot">P3</div>
+      <div class="phase-body">
+        <span class="phase-badge">Tháng 5 &amp; 6</span>
+        <h3>SCALE &amp; TỐI ƯU</h3>
+        <div class="phase-goal">Mục tiêu: Có đại lý đầu tiên thực sự hoạt động — Mở rộng mạng lưới</div>
+        <div class="phase-items">
+          <div class="phase-item">Pilot với 1–2 đại lý đầu tiên — ghi nhận vấn đề thực tế để chuẩn hóa quy trình</div>
+          <div class="phase-item">Mở rộng tuyển dụng đại lý (tùy tiến độ)</div>
+          <div class="phase-item">Tối ưu cơ chế quản lý đại lý: KPI, báo cáo định kỳ, hỗ trợ &amp; xử lý sự cố</div>
+          <div class="phase-item">Thiết lập dashboard theo dõi hiệu suất đại lý đơn giản, dễ dùng</div>
+          <div class="phase-item">Đánh giá toàn diện 6 tháng — đo lường kết quả theo bộ KPI đã thống nhất ban đầu</div>
+          <div class="phase-item">Hiểu và biết cách quan sát việc thực hành tài chính có đi đúng hướng không thông qua 4 bông hoa</div>
+        </div>
+        <div class="phase-deliverable">📄 Deliverable: <span>Báo cáo kết quả 6 tháng + Kế hoạch scale giai đoạn 2</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- ════ SECTION V — SPA ════ -->
+<section class="section" id="sec5">
+<div class="wrap">
+  <div class="sec-label"><span class="sec-num">V</span>SPA</div>
+  <h2 class="sec-title">SPA — Các Hoạt Động Tạo Hệ Thống Vận Hành</h2>
+  <p class="sec-desc">SPA (System Producing Activities) là tập hợp các hoạt động trọng tâm tạo ra hệ thống vận hành bền vững.</p>
+
+  <!-- 5.1 -->
+  <div class="card">
+    <div class="card-title">5.1 Hoạt Động Coaching &amp; Đồng Hành</div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Hoạt động</th><th>Tần suất</th><th>Thời lượng</th><th>Đầu ra kỳ vọng</th></tr></thead>
+        <tbody>
+          <tr><td>Coaching 1-on-1 với Founder</td><td>4 buổi / tháng</td><td>90 phút / buổi</td><td>Action plan cụ thể + insight chiến lược</td></tr>
+          <tr><td>Review &amp; Accountability</td><td>Buổi cuối mỗi tháng</td><td>90 phút / buổi</td><td>Đánh giá KPI, điều chỉnh hướng đi</td></tr>
+          <tr><td>Hỗ trợ qua Zalo / Email</td><td>Liên tục</td><td>Phản hồi ≤ 24h</td><td>Giải đáp câu hỏi chiến lược phát sinh</td></tr>
+          <tr><td>Đào tạo nhân sự nội bộ (khi cần)</td><td>Linh động theo buổi coach</td><td>2 – 4 giờ</td><td>Team hiểu &amp; thực thi đúng hệ thống</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 5.2 -->
+  <div class="card">
+    <div class="card-title">5.2 Tài Liệu &amp; Hệ Thống Cần Xây Dựng (Deliverables)</div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Tài liệu / Hệ thống</th><th style="width:110px">Phase</th><th>Người chịu trách nhiệm</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Bản đồ thực trạng doanh nghiệp (Business Audit Report)</td>
+            <td><span style="background:#FFF3CD;color:#7D6608;padding:3px 9px;border-radius:5px;font-size:11.5px;font-weight:700;white-space:nowrap">Phase 1</span></td>
+            <td>Coach dẫn dắt, Founder cung cấp data</td>
+          </tr>
+          <tr>
+            <td>Blueprint mô hình đại lý v1.0 (cấu trúc, hoa hồng, tiêu chí)</td>
+            <td><span style="background:#FFF3CD;color:#7D6608;padding:3px 9px;border-radius:5px;font-size:11.5px;font-weight:700;white-space:nowrap">Phase 1</span></td>
+            <td>Hai bên cùng thiết kế</td>
+          </tr>
+          <tr>
+            <td>Bộ tiêu chí tuyển chọn &amp; đánh giá đại lý</td>
+            <td><span style="background:#FFF3CD;color:#7D6608;padding:3px 9px;border-radius:5px;font-size:11.5px;font-weight:700;white-space:nowrap">Phase 1</span></td>
+            <td>Coach template, Founder điều chỉnh</td>
+          </tr>
+          <tr>
+            <td>Agent Starter Kit (hợp đồng, bảng giá, script, brochure)</td>
+            <td><span style="background:#D5F5E3;color:#1E5631;padding:3px 9px;border-radius:5px;font-size:11.5px;font-weight:700;white-space:nowrap">Phase 2</span></td>
+            <td>Coach cung cấp khung, Founder customize</td>
+          </tr>
+          <tr>
+            <td>SOP vận hành nội bộ</td>
+            <td><span style="background:#D5F5E3;color:#1E5631;padding:3px 9px;border-radius:5px;font-size:11.5px;font-weight:700;white-space:nowrap">Phase 2</span></td>
+            <td>Founder + đội ngũ, Coach review</td>
+          </tr>
+          <tr>
+            <td>Hành trình trải nghiệm của doanh nghiệp</td>
+            <td><span style="background:#D5F5E3;color:#1E5631;padding:3px 9px;border-radius:5px;font-size:11.5px;font-weight:700;white-space:nowrap">Phase 2</span></td>
+            <td>Hai bên cùng xây dựng qua pilot</td>
+          </tr>
+          <tr>
+            <td>Dashboard theo dõi KPI đại lý (dạng đơn giản)</td>
+            <td><span style="background:#D6EAF8;color:#1A3C6B;padding:3px 9px;border-radius:5px;font-size:11.5px;font-weight:700;white-space:nowrap">Phase 3</span></td>
+            <td>Founder chịu trách nhiệm chính</td>
+          </tr>
+          <tr>
+            <td>Báo cáo kết quả 6 tháng + Kế hoạch scale giai đoạn 2</td>
+            <td><span style="background:#D6EAF8;color:#1A3C6B;padding:3px 9px;border-radius:5px;font-size:11.5px;font-weight:700;white-space:nowrap">Phase 3</span></td>
+            <td>Coach lập, Founder duyệt</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 5.3 KPI -->
+  <div class="card">
+    <div class="card-title">5.3 Bộ Chỉ Số Theo Dõi Hàng Tháng (KPIs)</div>
+    <p style="font-size:13px;color:var(--text-mid);margin-bottom:14px">Hai bên sẽ cùng thống nhất và điều chỉnh bộ KPI này trong buổi coaching đầu tiên. Dưới đây là khung gợi ý ban đầu.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Chỉ số</th><th>Hiện tại</th><th>Mục tiêu (Tháng 6)</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Doanh thu tháng (VNĐ)</td>
+            <td class="kpi-now" id="s-rev-now">—</td>
+            <td class="kpi-auto" id="s-rev-target">—</td>
+          </tr>
+          <tr>
+            <td>Số đại lý đang hoạt động</td>
+            <td>0 đại lý</td>
+            <td><input class="cell-input" id="s-agents" placeholder="[______] đại lý"></td>
+          </tr>
+          <tr>
+            <td>Số tỉnh / trường đang phục vụ</td>
+            <td class="kpi-now" id="s-prov-now">—</td>
+            <td class="kpi-auto" id="s-prov-target">—</td>
+          </tr>
+          <tr>
+            <td>Số hợp đồng GV mới / tháng</td>
+            <td><input class="cell-input" id="s-gv-now" placeholder="[__]" style="max-width:70px"></td>
+            <td><input class="cell-input" id="s-gv-target" placeholder="[__]" style="max-width:70px"></td>
+          </tr>
+          <tr>
+            <td>Số tour tổ chức / tháng</td>
+            <td><input class="cell-input" id="s-tour-now" placeholder="[__]" style="max-width:70px"></td>
+            <td><input class="cell-input" id="s-tour-target" placeholder="[__]" style="max-width:70px"></td>
+          </tr>
+          <tr>
+            <td>% thời gian Founder trong vận hành</td>
+            <td class="kpi-now" id="s-time-now">—</td>
+            <td><input class="cell-input" id="s-time-target" placeholder="[__]%" style="max-width:80px"></td>
+          </tr>
+          <tr>
+            <td>Số nhân sự (bao gồm đại lý)</td>
+            <td>3 người</td>
+            <td><input class="cell-input" id="s-staff-target" placeholder="[______] người"></td>
+          </tr>
+          <tr>
+            <td>Mức hài lòng của đại lý (thang 1–10)</td>
+            <td>N/A</td>
+            <td><input class="cell-input" id="s-satisfaction" placeholder="[__]" style="max-width:70px"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════ SECTION VI — GÓI ĐẦU TƯ ════ -->
+<section class="section" id="sec6">
+<div class="wrap">
+  <div class="sec-label"><span class="sec-num">VI</span>Gói Đầu Tư</div>
+  <h2 class="sec-title">Gói Đầu Tư</h2>
+  <p class="sec-desc">Đây là chương trình đồng hành chiến lược dài hạn — không phải khóa học hay workshop đơn lẻ. Mức đầu tư phản ánh cam kết của cả hai bên vào kết quả thực và bền vững.</p>
+
+  <div class="pkg-grid">
+    <div class="pkg" id="pkg1" onclick="selectPkg(1)">
+      <div class="pkg-name">Phí Đầu Tư Hàng Tháng</div>
+      <div class="pkg-price">31<sub>tr/tháng</sub></div>
+      <div class="pkg-total">Thanh toán hàng tháng</div>
+      <div class="pkg-desc">Linh hoạt nhất — phù hợp nếu muốn trải nghiệm trước khi cam kết dài hạn</div>
+    </div>
+    <div class="pkg" id="pkg2" onclick="selectPkg(2)">
+      <div class="pkg-name">Gói Quý — 3 Tháng</div>
+      <div class="pkg-price">28<sub>tr/tháng</sub></div>
+      <div class="pkg-total">Tổng: 84.000.000 đ / quý</div>
+      <div class="pkg-save">Tiết kiệm 9.000.000 đ</div>
+      <div class="pkg-desc">Cam kết 3 tháng — tiết kiệm và đủ thời gian xây nền tảng hệ thống đại lý</div>
+    </div>
+    <div class="pkg selected" id="pkg3" onclick="selectPkg(3)">
+      <div class="pkg-ribbon">✦ Khuyến nghị</div>
+      <div class="pkg-name">Gói 6 Tháng</div>
+      <div class="pkg-price">25<sub>tr/tháng</sub></div>
+      <div class="pkg-total">Tổng: 150.000.000 đ / 6 tháng</div>
+      <div class="pkg-save">Tiết kiệm 36.000.000 đ</div>
+      <div class="pkg-desc">Đồng hành trọn vẹn 3 giai đoạn — từ nền tảng đến scale. Kết quả rõ từ tháng 4.</div>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <strong>✦ Gói 6 tháng được khuyến nghị</strong> — vì xây hệ thống đại lý cần đủ thời gian để pilot, tối ưu và mở rộng. Kết quả thường bắt đầu rõ ràng từ tháng 4 trở đi. Dừng giữa chừng đồng nghĩa với việc mất đi phần lớn giá trị đã đầu tư.
+  </div>
+
+  <!-- ROI -->
+  <div class="card" style="border-color:var(--gold);margin-top:20px">
+    <div class="card-title">📊 Ước Tính ROI — Gói đang chọn: <span id="pkg-display" style="color:var(--gold-deep)">Gói 6 Tháng — 150.000.000 đ</span></div>
+    <div class="roi-grid">
+      <div class="roi-item"><label>Chi phí chương trình</label><div class="roi-val" id="roi-cost">150.000.000 đ</div></div>
+      <div class="roi-item"><label>Tăng doanh thu / tháng</label><div class="roi-val" id="roi-delta">Nhập doanh thu</div></div>
+      <div class="roi-item hl"><label>Hoàn vốn ước tính</label><div class="roi-val" id="roi-payback">—</div></div>
+    </div>
+  </div>
+
+  <!-- Bao gồm -->
+  <div class="card">
+    <div class="card-title">Gói Dịch Vụ Bao Gồm</div>
+    <ul class="inc-list">
+      <li><span class="ic">✓</span> 18 buổi coaching 1-on-1 với Founder (90 phút/buổi) trong 6 tháng</li>
+      <li><span class="ic">✓</span> 6 buổi Review &amp; Accountability cuối mỗi tháng (60 phút/buổi)</li>
+      <li><span class="ic">✓</span> Hỗ trợ không giới hạn qua Zalo / Email trong giờ làm việc</li>
+      <li><span class="ic">✓</span> Toàn bộ tài liệu, template, framework được thiết kế trong chương trình</li>
+      <li><span class="ic">✓</span> SOP vận hành nội bộ cho đội ngũ và quy trình quản lý đại lý</li>
+      <li><span class="ic">✓</span> Báo cáo kết quả toàn diện 6 tháng + Kế hoạch scale giai đoạn 2</li>
+      <li><span class="ic">✓</span> Đào tạo nhỏ cho nhân sự nội bộ khi cần thiết</li>
+    </ul>
+    <div style="margin-top:18px;padding-top:14px;border-top:1px solid var(--border-light)">
+      <div style="font-size:11.5px;font-weight:700;color:var(--text-light);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Không bao gồm trong gói</div>
+      <ul class="excl-list">
+        <li><span class="ic">✗</span> Chi phí đi lại nếu cần làm việc trực tiếp ngoài Hà Nội / TP.HCM (thương lượng riêng)</li>
+        <li><span class="ic">✗</span> Chi phí đào tạo đại lý quy mô lớn (có thể thiết kế thêm theo yêu cầu)</li>
+        <li><span class="ic">✗</span> Phần mềm, công cụ quản lý đại lý (Founder tự lựa chọn và thanh toán)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════ SECTION VII — ĐIỀU KHOẢN ════ -->
+<section class="section" id="sec7">
+<div class="wrap">
+  <div class="sec-label"><span class="sec-num">VII</span>Điều Khoản &amp; Cam Kết</div>
+  <h2 class="sec-title">Điều Khoản &amp; Cam Kết</h2>
+
+  <div class="card">
+
+    <div class="term-block">
+      <h4>7.1 Cam Kết Từ KindSight Academy</h4>
+      <ul class="commit-list">
+        <li>Đồng hành xuyên suốt 6 tháng — không bỏ ngang hay giảm chất lượng giữa chừng</li>
+        <li>Chuẩn bị kỹ trước mỗi buổi — không coaching chung chung hay lý thuyết suông</li>
+        <li>Kết hợp giữa mô hình quản trị hiện đại và triết lý gieo hạt trong kinh doanh</li>
+        <li>Bảo mật tuyệt đối mọi thông tin doanh nghiệp, chiến lược và số liệu</li>
+        <li>Điều chỉnh nội dung theo thực tế phát sinh — không áp đặt một mô hình cứng nhắc</li>
+        <li>Phản hồi trong vòng 24h với câu hỏi chiến lược qua Zalo / Email</li>
+      </ul>
+    </div>
+
+    <div class="term-block" style="padding-top:18px;border-top:1px solid var(--border-light)">
+      <h4>7.2 Cam Kết Từ Founder / Doanh Nghiệp</h4>
+      <ul class="commit-list">
+        <li>Tham gia đủ các buổi đã lên lịch — báo trước ≥ 24h nếu cần đổi lịch</li>
+        <li>Thực hiện bài tập và hành động giữa các buổi — coaching chỉ có giá trị khi có hành động</li>
+        <li>Chia sẻ thông tin trung thực về doanh nghiệp để việc tư vấn sát với thực tế</li>
+        <li>Cam kết đủ 6 tháng — không dừng giữa chừng khi kết quả chưa xuất hiện rõ</li>
+      </ul>
+    </div>
+
+    <div class="term-block" style="padding-top:18px;border-top:1px solid var(--border-light)">
+      <h4>7.3 Điều Khoản Thanh Toán</h4>
+      <ul class="bullet-list">
+        <li>Gói quý (3 tháng): thanh toán toàn bộ trước khi bắt đầu buổi đầu tiên</li>
+        <li>Gói 6 tháng: thanh toán toàn bộ, hoặc chia 2 lần (Tháng 1 + Tháng 4)</li>
+        <li>Nếu Founder dừng chương trình giữa chừng: không hoàn lại các tháng đã thanh toán</li>
+      </ul>
+    </div>
+
+    <div class="term-block" style="padding-top:18px;border-top:1px solid var(--border-light)">
+      <h4>7.4 Thông Tin Khởi Động Chương Trình</h4>
+      <div class="field-group" style="grid-template-columns:1fr 1fr;margin-top:12px">
+        <div class="field">
+          <label>Ngày mong muốn bắt đầu</label>
+          <input type="date" id="start-date">
+        </div>
+        <div class="field">
+          <label>Hình thức làm việc</label>
+          <select id="work-mode">
+            <option value="">— Chọn hình thức —</option>
+            <option value="online">Online qua Zoom</option>
+            <option value="offline-hn">Offline tại Hà Nội</option>
+            <option value="offline-hcm">Offline tại TP. Hồ Chí Minh</option>
+            <option value="hybrid">Kết hợp Online + Offline</option>
+          </select>
+        </div>
+        <div class="field" style="grid-column:1/-1">
+          <label>Gói lựa chọn</label>
+          <div class="cb-group">
+            <label><input type="checkbox" id="cb-monthly" onchange="syncPkg(1,this)"> Gói Tháng</label>
+            <label><input type="checkbox" id="cb-quarterly" onchange="syncPkg(2,this)"> Gói Quý (3 tháng)</label>
+            <label><input type="checkbox" id="cb-6m" onchange="syncPkg(3,this)" checked> Gói 6 Tháng</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SIGNATURE -->
+  <div class="sig-grid">
+    <div class="sig-box">
+      <h4>Đại diện KindSight Academy</h4>
+      <div class="sig-name">VƯƠNG Y LAN</div>
+      <div style="border-bottom:1.5px dashed var(--border);height:44px;margin-bottom:8px"></div>
+      <div class="sig-date">Chữ ký &amp; Ngày: ___________________</div>
+    </div>
+    <div class="sig-box">
+      <h4>Đại diện Doanh Nghiệp</h4>
+      <div style="margin-bottom:10px">
+        <input id="founder-name" placeholder="Tên Founder / Người ký" style="background:transparent;border:none;border-bottom:1.5px solid var(--border);width:100%;font-size:15px;font-weight:700;color:var(--brown);font-family:inherit;padding:4px 2px;margin-bottom:4px">
+      </div>
+      <div style="border-bottom:1.5px dashed var(--border);height:44px;margin-bottom:8px"></div>
+      <div class="sig-date">Chữ ký &amp; Ngày: ___________________</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="text-align:center;margin-top:36px;padding:22px 24px;background:var(--cream-mid);border-radius:14px;border:1px solid var(--border-light)">
+    <p style="font-size:13.5px;color:var(--text-mid)">Để đặt lịch <strong>buổi tư vấn khám phá miễn phí (30 phút)</strong> trước khi quyết định — liên hệ:</p>
+    <p style="margin-top:10px;font-size:14.5px;color:var(--gold-dark);font-weight:700">
+      📧 ngobaothai@gmail.com
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      📱 Zalo: <input id="phone-zalo" placeholder="[Số điện thoại]" style="background:transparent;border:none;border-bottom:1.5px solid var(--border);font-size:14px;color:var(--brown);font-family:inherit;padding:2px 6px;min-width:140px">
+    </p>
+  </div>
+</div>
+</section>
+
+<!-- ACTION BAR -->
+<div class="action-bar">
+  <button class="btn btn-ghost" onclick="saveLocal()">💾 Lưu tiến độ</button>
+  <button class="btn btn-ghost" onclick="loadLocal()">📂 Tải lại</button>
+  <button class="btn btn-ghost" onclick="window.print()">🖨 Xuất PDF</button>
+  <button class="btn btn-gold" onclick="submitForm()">📩 Gửi cho KindSight</button>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ── CONSTANTS ──
+const PKG_COST  = [0, 0, 84e6, 150e6];
+const PKG_NAMES = ['','Gói Tháng — 31tr/tháng','Gói Quý — 84.000.000 đ','Gói 6 Tháng — 150.000.000 đ'];
+let selectedPkg = 3;
+
+// ── HELPERS ──
+function $(id){ return document.getElementById(id); }
+function setText(id,val){ const el=$(id); if(el) el.textContent=val; }
+function parseNum(id){ const el=$(id); if(!el) return NaN; const n=parseFloat((el.value||'').replace(/[^0-9.]/g,'')); return isNaN(n)?NaN:n; }
+function fmtVND(n){ return new Intl.NumberFormat('vi-VN').format(Math.round(n))+' đ'; }
+function fmtShort(n){
+  if(isNaN(n)||n===null) return '—';
+  if(n>=1e9)  return (n/1e9).toFixed(2)+' tỷ đ';
+  if(n>=1e6)  return (n/1e6).toFixed(1)+' triệu đ';
+  return fmtVND(n);
+}
+
+// ── MAIN CALC ──
+function calcAll(){
+  const rev    = parseNum('current-rev');
+  const g      = parseInt($('growth-slider').value)||50;
+  const prov   = parseNum('current-provinces');
+  const schools= parseNum('current-schools');
+  const fPct   = parseNum('current-founder-pct');
+  const newProv= parseNum('k-prov-new');
+
+  // Slider
+  setText('growth-lbl', '+'+g+'%');
+
+  // Revenue
+  if(!isNaN(rev) && rev>0){
+    const target = rev*(1+g/100);
+    const delta  = target-rev;
+    setText('disp-now',    fmtShort(rev));
+    setText('disp-target', fmtShort(target));
+    setText('disp-delta',  '+ '+fmtShort(delta)+' / tháng');
+    setText('k-rev-target', fmtShort(target));
+    setText('s-rev-now',   fmtShort(rev));
+    setText('s-rev-target', fmtShort(target));
+    calcROI(delta);
+  } else {
+    ['disp-now','disp-target','k-rev-target','s-rev-now','s-rev-target'].forEach(id=>setText(id,'—'));
+    setText('disp-delta','Nhập doanh thu hiện tại ở Phần I để tính toán');
+    setText('roi-delta','Nhập doanh thu'); setText('roi-payback','—');
+  }
+
+  // Provinces
+  if(!isNaN(prov)){
+    setText('s-prov-now', prov+' tỉnh');
+    if(!isNaN(newProv) && newProv>0){
+      setText('s-prov-target', (prov+newProv)+' tỉnh');
+      if(!isNaN(schools) && schools>0){
+        const est = Math.round(schools + (schools/prov)*newProv*0.75);
+        setText('k-school-target', '~'+est+' trường');
+      } else {
+        setText('k-school-target','—');
+      }
+    } else {
+      setText('s-prov-target','—');
+    }
+  } else {
+    setText('s-prov-now','—'); setText('s-prov-target','—');
+  }
+
+  // Founder time
+  if(!isNaN(fPct)){
+    setText('k-time-now', fPct+'');
+    setText('s-time-now', fPct+'%');
+  } else {
+    setText('k-time-now','—'); setText('s-time-now','—');
+  }
+}
+
+function calcROI(delta){
+  if(isNaN(delta)||delta<=0) return;
+  const cost = selectedPkg===1 ? 31e6 : PKG_COST[selectedPkg];
+  setText('roi-cost',  cost>0?fmtVND(cost):'—');
+  setText('roi-delta', '+'+fmtShort(delta)+'/tháng');
+  if(cost>0){
+    const m = cost/delta;
+    setText('roi-payback', m<1?'< 1 tháng': m.toFixed(1)+' tháng');
+  }
+}
+
+// ── PACKAGE SELECT ──
+function selectPkg(n){
+  selectedPkg=n;
+  [1,2,3].forEach(i=>$('pkg'+i).classList.toggle('selected',i===n));
+  const display=['','Gói Tháng — 31.000.000 đ/tháng','Gói Quý — 84.000.000 đ (3 tháng)','Gói 6 Tháng — 150.000.000 đ (6 tháng)'];
+  const costs  =['','31.000.000 đ/tháng','84.000.000 đ','150.000.000 đ'];
+  setText('pkg-display', display[n]);
+  setText('roi-cost', costs[n]);
+  $('cb-monthly').checked  = n===1;
+  $('cb-quarterly').checked= n===2;
+  $('cb-6m').checked       = n===3;
+  const rev=parseNum('current-rev'), g=parseInt($('growth-slider').value)||50;
+  if(!isNaN(rev)&&rev>0) calcROI(rev*g/100);
+}
+
+function syncPkg(n,cb){
+  [1,2,3].forEach(i=>{ if(i!==n){ const ids=['','cb-monthly','cb-quarterly','cb-6m']; $(ids[i]).checked=false; } });
+  if(cb.checked) selectPkg(n);
+}
+
+// ── SAVE / LOAD ──
+const STORE_KEY='kindsight_v3';
+
+function collectData(){
+  const ids=['biz-name','current-rev','current-provinces','current-schools','current-teachers',
+              'current-tours','current-founder-pct',
+              'q-escape','q-achieve','q-barrier','q-vision',
+              'k-agents','k-prov-new','k-time-target','k-staff','k-custom1','k-custom2',
+              's-agents','s-gv-now','s-gv-target','s-tour-now','s-tour-target',
+              's-time-target','s-staff-target','s-satisfaction',
+              'start-date','work-mode','founder-name','phone-zalo'];
+  const data={pkg:selectedPkg, growth:$('growth-slider').value};
+  ids.forEach(id=>{ const el=$(id); if(el) data[id]=el.value; });
+  data['sys-status']=Array.from(document.querySelectorAll('[name=sys-status]:checked')).map(c=>c.value);
+  // Save all contenteditable elements
+  document.querySelectorAll('[data-ce-id]').forEach(el=>{
+    data['ce__'+el.dataset.ceId]=el.innerHTML;
+  });
+  return data;
+}
+
+function saveLocal(){
+  try{ localStorage.setItem(STORE_KEY,JSON.stringify(collectData())); showToast('✓ Đã lưu tiến độ!'); }
+  catch(e){ showToast('⚠ Không thể lưu.'); }
+}
+
+function loadLocal(){
+  try{
+    const raw=localStorage.getItem(STORE_KEY);
+    if(!raw){ showToast('Chưa có dữ liệu đã lưu.'); return; }
+    const d=JSON.parse(raw);
+    Object.keys(d).forEach(key=>{
+      if(['pkg','growth','sys-status'].includes(key)) return;
+      if(key.startsWith('ce__')){
+        const ceId=key.replace('ce__','');
+        const el=document.querySelector('[data-ce-id="'+ceId+'"]');
+        if(el) el.innerHTML=d[key];
+        return;
+      }
+      const el=$(key); if(el) el.value=d[key];
+    });
+    if(d.growth) $('growth-slider').value=d.growth;
+    if(d.pkg) selectPkg(d.pkg);
+    if(d['sys-status']){
+      document.querySelectorAll('[name=sys-status]').forEach(c=>{ c.checked=d['sys-status'].includes(c.value); });
+    }
+    calcAll();
+    showToast('✓ Đã khôi phục dữ liệu!');
+  } catch(e){ showToast('⚠ Lỗi tải dữ liệu.'); }
+}
+
+// ── SUBMIT ──
+function stripHtml(html){ const d=document.createElement('div'); d.innerHTML=html; return (d.textContent||d.innerText||'').trim(); }
+
+function submitForm(){
+  const d=collectData();
+  const pkg=PKG_NAMES[d.pkg||3];
+  const ce=k=>stripHtml(d['ce__'+k]||'');
+  const lines=[
+    '=== PROPOSAL — BUSINESS MENTOR & COACHING 6 THÁNG ===',
+    '',
+    '[THÔNG TIN DOANH NGHIỆP]',
+    'Tên DN: '+(d['biz-name']||'—'),
+    'Lĩnh vực: '+( ce('val-field')||'—'),
+    'Thị trường: '+(ce('val-market')||'—'),
+    'Thời gian HĐ: '+(ce('val-age')||'—'),
+    'Nhân sự: '+(ce('val-staff')||'—'),
+    'Doanh thu/tháng: '+(d['current-rev']?new Intl.NumberFormat('vi-VN').format(d['current-rev'])+' đ':'—'),
+    'Số tỉnh: '+(d['current-provinces']||'—'),
+    'Số trường: '+(d['current-schools']||'—'),
+    'Số GV: '+(d['current-teachers']||'—'),
+    'Số tour/năm: '+(d['current-tours']||'—'),
+    '% Founder trong vận hành: '+(d['current-founder-pct']||'—')+'%',
+    '',
+    '[THÁCH THỨC]',
+    '1. '+(ce('ch1')||'—'),
+    '2. '+(ce('ch2')||'—'),
+    '3. '+(ce('ch3')||'—'),
+    '4. '+(ce('ch4')||'—'),
+    ce('ch5')?'5. '+ce('ch5'):'',
+    ce('ch6')?'6. '+ce('ch6'):'',
+    '',
+    '[CƠ HỘI]',
+    '1. '+(ce('opp1')||'—'),
+    '2. '+(ce('opp2')||'—'),
+    ce('opp3')?'3. '+ce('opp3'):'',
+    ce('opp4')?'4. '+ce('opp4'):'',
+    '',
+    '[TỰ ĐÁNH GIÁ FOUNDER]',
+    (ce('lbl-q1')||'Muốn thoát ra')+': '+(d['q-escape']||'—'),
+    (ce('lbl-q2')||'Muốn đạt được')+': '+(d['q-achieve']||'—'),
+    (ce('lbl-q3')||'Rào cản lớn nhất')+': '+(d['q-barrier']||'—'),
+    (ce('lbl-q4')||'Viễn cảnh 6 tháng')+': '+(d['q-vision']||'—'),
+    '',
+    '[MỤC TIÊU & KPI]',
+    'Mục tiêu tăng trưởng doanh thu: +'+(d.growth||'50')+'%',
+    (ce('kpi-lbl1')||'Số đại lý mục tiêu')+': '+(d['k-agents']||'—'),
+    (ce('kpi-lbl3')||'Tỉnh mới mục tiêu')+': '+(d['k-prov-new']||'—'),
+    (ce('kpi-lbl5')||'% Founder mục tiêu')+': '+(d['k-time-target']||'—')+'%',
+    (ce('kpi-lbl6')||'Nhân sự mục tiêu')+': '+(d['k-staff']||'—'),
+    d['k-custom1']?(ce('kpi-lbl8')||'Chỉ số bổ sung 1')+': '+d['k-custom1']:'',
+    d['k-custom2']?(ce('kpi-lbl9')||'Chỉ số bổ sung 2')+': '+d['k-custom2']:'',
+    '',
+    '[KHỞI ĐỘNG]',
+    'Ngày bắt đầu: '+(d['start-date']||'—'),
+    'Hình thức: '+(d['work-mode']||'—'),
+    'Gói lựa chọn: '+pkg,
+    '',
+    '[ĐẠI DIỆN DOANH NGHIỆP]',
+    'Tên: '+(d['founder-name']||'—'),
+    'Zalo: '+(d['phone-zalo']||'—'),
+  ].filter(l=>l!=='');
+  const sub=encodeURIComponent('[Proposal] Business Mentor & Coaching — '+(d['biz-name']||ce('val-field')||'Doanh nghiệp'));
+  const body=encodeURIComponent(lines.join('\n'));
+  window.location.href='mailto:ngobaothai@gmail.com?subject='+sub+'&body='+body;
+  showToast('📩 Đang mở email gửi đến KindSight...');
+}
+
+// ── TOAST ──
+function showToast(msg){
+  const t=$('toast'); t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2800);
+}
+
+// ── SCROLL SPY ──
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      document.querySelectorAll('.nav a').forEach(a=>{
+        a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id);
+      });
+    }
+  });
+},{threshold:.2,rootMargin:'-60px 0px 0px 0px'});
+document.querySelectorAll('section[id]').forEach(s=>obs.observe(s));
+
+// ── INIT ──
+calcAll();
+try{ if(localStorage.getItem(STORE_KEY)) loadLocal(); }catch(e){}
+</script>
+</body>
+</html>
